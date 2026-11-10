@@ -1,0 +1,474 @@
+/* ==========================================================
+   Calisthenics Hub, style.css
+   Loaded AFTER Bootstrap so these rules can override it.
+   ========================================================== */
+
+/* ---------- Design tokens ---------- */
+:root {
+  --bg: #121212;
+  --surface: #1c1c1c;
+  --surface-2: #262626;
+  --text: #f2f2f2;
+  --muted: #a8a8a8;
+  --accent: #ccff00;
+  --accent-dark: #a8d400;
+  --font-display: "Barlow Condensed", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Barlow", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Override Bootstrap's own variables */
+  --bs-body-bg: var(--bg);
+  --bs-body-color: var(--text);
+  --bs-body-font-family: var(--font-body);
+  --bs-border-color: #333;
+}
+
+/* ---------- Base ---------- */
+html { scroll-behavior: smooth; }
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden; /* safety net: no horizontal scroll */
+}
+
+section[id] { scroll-margin-top: 70px; } /* sticky navbar offset */
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; line-height: 1.05; }
+
+a:focus-visible, button:focus-visible, .form-control:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.section-title { font-size: 2.4rem; margin-bottom: 1rem; }
+.section-subtitle { font-size: 1.8rem; color: var(--accent); }
+
+/* ======================= TASK 2 STYLES (Bootstrap overrides) ======================= */
+
+/* ---------- Navbar ---------- */
+.navbar {
+  background-color: rgba(18, 18, 18, 0.96);
+  border-bottom: 2px solid var(--accent);
+}
+.navbar-brand {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  font-weight: 800;
+  color: var(--text);
+}
+.navbar-brand span { color: var(--accent); }
+.navbar .nav-link { color: var(--muted); font-weight: 500; }
+.navbar .nav-link:hover,
+.navbar .nav-link:focus { color: var(--accent); }
+.navbar-toggler { border-color: var(--accent); }
+.navbar-toggler:focus { box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.4); }
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='%23ccff00' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* ---------- Buttons ---------- */
+.btn-accent {
+  background-color: var(--accent);
+  border-color: var(--accent);
+  color: #111;
+  font-weight: 700;
+  border-radius: 0;
+}
+.btn-accent:hover,
+.btn-accent:focus {
+  background-color: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #111;
+}
+.btn-outline-accent {
+  border: 2px solid var(--accent);
+  color: var(--accent);
+  font-weight: 600;
+  border-radius: 0;
+}
+.btn-outline-accent:hover {
+  background-color: var(--accent);
+  color: #111;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  min-height: 85vh;
+  background:
+    linear-gradient(90deg, rgba(18, 18, 18, 0.95) 35%, rgba(18, 18, 18, 0.7)),
+    url("https://picsum.photos/seed/calisthenics-hero/1600/900") center / cover no-repeat;
+}
+.hero-title {
+  font-size: clamp(3rem, 9vw, 6rem);
+  font-weight: 800;
+  text-transform: uppercase;
+}
+.hero-subtitle { color: var(--muted); max-width: 36rem; }
+.hero-stats li {
+  padding: 1rem 0 1rem 1.25rem;
+  border-left: 4px solid var(--accent);
+  margin-bottom: 1rem;
+  color: var(--muted);
+}
+.hero-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  color: var(--text);
+}
+
+/* ---------- About ---------- */
+.about-img {
+  width: 100%;
+  border-bottom: 6px solid var(--accent);
+  object-fit: cover;
+}
+
+/* ---------- Cards (reviews) ---------- */
+.card {
+  background-color: var(--surface);
+  border: 1px solid var(--bs-border-color);
+  border-left: 4px solid var(--accent);
+  border-radius: 0;
+  color: var(--text);
+}
+.card-text { font-size: 1.1rem; }
+.card-footer {
+  background-color: transparent;
+  border-top: 1px solid var(--bs-border-color);
+  color: var(--muted);
+}
+
+/* ---------- Accordion ---------- */
+.accordion {
+  --bs-accordion-bg: var(--surface);
+  --bs-accordion-color: var(--text);
+  --bs-accordion-border-color: #333;
+  --bs-accordion-btn-bg: var(--surface);
+  --bs-accordion-btn-color: var(--text);
+  --bs-accordion-active-bg: var(--surface-2);
+  --bs-accordion-active-color: var(--accent);
+  --bs-accordion-btn-focus-box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.4);
+  --bs-accordion-border-radius: 0;
+  --bs-accordion-inner-border-radius: 0;
+}
+.accordion-button { font-weight: 600; }
+.accordion-button::after { filter: invert(1) brightness(1.5); }
+.accordion-button:not(.collapsed)::after {
+  filter: invert(86%) sepia(86%) saturate(900%) hue-rotate(20deg);
+}
+
+/* ---------- Contact form ---------- */
+.contact-form {
+  background-color: var(--surface);
+  border-top: 4px solid var(--accent);
+}
+.form-label { color: var(--muted); font-weight: 500; }
+.form-control,
+.form-select {
+  background-color: var(--surface-2);
+  border: 1px solid #3a3a3a;
+  border-radius: 0;
+  color: var(--text);
+}
+.form-control::placeholder { color: #777; }
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--surface-2);
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.25);
+  color: var(--text);
+}
+
+/* ---------- Footer ---------- */
+.site-footer {
+  border-top: 1px solid #2a2a2a;
+  color: var(--muted);
+}
+
+/* ==================================================================
+   TASK 1: PROGRAMS SECTION (hand-written, mobile-first media queries)
+   No Bootstrap classes, no fixed widths, no absolute positioning.
+   Base styles = phone. Media queries only ADD changes for wider screens.
+   ================================================================== */
+
+/* BASE (phone, <768px): 1 card per row */
+.programs {
+  background-color: var(--surface);
+  padding: 2.5rem 1rem;
+}
+
+.programs-title {
+  font-size: 2rem;            /* small heading on phones */
+  text-align: left;
+  margin: 0 0 0.5rem;
+}
+
+.programs-intro {
+  color: var(--muted);
+  margin: 0 0 1.5rem;
+}
+
+.programs-list {
+  display: grid;
+  grid-template-columns: 1fr; /* 1 column */
+  gap: 1rem;
+}
+
+.program-card {
+  background-color: var(--bg);
+  border-top: 4px solid var(--accent);
+  padding: 1.25rem;           /* compact padding on phones */
+}
+
+.program-card h3 { font-size: 1.5rem; margin: 0 0 0.5rem; }
+.program-card p { color: var(--muted); margin: 0 0 1rem; }
+
+.program-meta {
+  display: inline-block;
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+/* TABLET (>=768px): 2 cards per row + extra changes */
+@media (min-width: 768px) {
+  .programs {
+    padding: 4rem 2rem;       /* more spacing */
+  }
+  .programs-title {
+    font-size: 3rem;          /* bigger heading */
+    text-align: center;       /* alignment changes */
+  }
+  .programs-intro { text-align: center; }
+  .programs-list {
+    grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    gap: 1.5rem;
+  }
+  .program-card { padding: 1.75rem; }      /* roomier cards */
+}
+
+/* DESKTOP (>=1280px): 3 cards per row */
+@media (min-width: 1280px) {
+  .programs { padding: 5rem 4rem; }
+  .programs-title { font-size: 4rem; }
+  .programs-list {
+    grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    gap: 2rem;
+    max-width: 1320px;
+    margin-inline: auto;
+  }
+}
+
+/* ===================== END OF TASK 1 ===================== */
+
+/* ==================================================================
+   MULTI-PAGE ADDITIONS (programs-table.html and blog.html)
+   ================================================================== */
+
+/* Active link in the shared navbar */
+.navbar .nav-link.active { color: var(--accent); border-bottom: 2px solid var(--accent); }
+@media (max-width: 767.98px) {
+  .navbar .nav-link.active { border-bottom: 0; border-left: 3px solid var(--accent); padding-left: 0.75rem; }
+}
+
+/* Compact hero for inner pages */
+.page-hero {
+  padding: 3.5rem 0 3rem;
+  border-bottom: 1px solid #2a2a2a;
+  background: linear-gradient(90deg, rgba(204, 255, 0, 0.08), transparent 60%), var(--bg);
+}
+.page-hero h1 {
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+.page-hero .lead { color: var(--muted); max-width: 40rem; margin-bottom: 0; }
+
+/* Shared helpers */
+.band { background-color: var(--surface); }
+.section-lead { color: var(--muted); margin-bottom: 1.5rem; }
+.badge-accent {
+  background-color: var(--accent);
+  color: #111;
+  font-weight: 700;
+  border-radius: 0;
+  padding: 0.45em 0.8em;
+}
+
+/* ---------- Tables (schedule + benchmarks) ---------- */
+.schedule-table {
+  --bs-table-bg: var(--surface);
+  --bs-table-color: var(--text);
+  --bs-table-border-color: #333;
+  --bs-table-hover-bg: rgba(204, 255, 0, 0.12);
+  --bs-table-hover-color: var(--text);
+  min-width: 640px;            /* table scrolls inside .table-responsive, not the page */
+  margin-bottom: 0;
+}
+.schedule-table caption { color: var(--muted); caption-side: top; padding-top: 0; }
+.schedule-table thead {
+  --bs-table-bg: #000;
+  --bs-table-color: var(--accent);
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.04em;
+}
+.schedule-table thead th { border-bottom: 2px solid var(--accent); padding: 0.9rem; }
+.schedule-table tbody th { color: var(--accent); font-family: var(--font-display); font-size: 1.15rem; }
+.schedule-table td { padding: 0.9rem; }
+.schedule-table tbody tr:hover td strong { color: var(--accent); }
+.slot-coach { display: block; color: var(--muted); font-size: 0.85rem; }
+.slot-rest { color: #666; }
+#benchmarkTable { min-width: 0; }   /* 3 narrow columns fit on a phone */
+
+/* Checkboxes in neon style */
+.form-check-input { background-color: var(--surface-2); border-color: #555; cursor: pointer; }
+.form-check-input:checked { background-color: var(--accent); border-color: var(--accent); }
+.form-check-input:focus { border-color: var(--accent); box-shadow: 0 0 0 3px rgba(204, 255, 0, 0.3); }
+.form-check-input:checked[type="checkbox"] {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3e%3cpath fill='none' stroke='%23111' stroke-linecap='round' stroke-linejoin='round' stroke-width='3' d='m6 10 3 3 6-6'/%3e%3c/svg%3e");
+}
+.form-check-label { color: var(--text); }
+fieldset legend { float: none; }
+
+/* ---------- Pricing cards ---------- */
+.plan-card { position: relative; }
+.plan-card h3 { font-size: 1.9rem; }
+.price {
+  font-family: var(--font-display);
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  margin: 0.5rem 0 1rem;
+}
+.plan-list li { padding: 0.5rem 0; border-top: 1px solid #333; color: var(--muted); }
+.plan-featured {
+  border: 2px solid var(--accent);
+  background-color: var(--surface-2);
+}
+@media (min-width: 992px) {
+  .plan-featured { transform: translateY(-12px); }  /* middle plan stands out on desktop */
+}
+
+/* ---------- Benchmark result box ---------- */
+.result-box {
+  background-color: var(--surface);
+  border-top: 4px solid var(--accent);
+  padding: 2rem;
+}
+.result-count { color: var(--muted); margin-bottom: 0.5rem; }
+.result-count span { color: var(--accent); font-family: var(--font-display); font-size: 2.2rem; font-weight: 800; }
+.result-box h3 { font-size: 2.2rem; }
+.result-box p { color: var(--muted); }
+@media (min-width: 992px) {
+  .result-box { position: sticky; top: 90px; }
+}
+
+/* ---------- Blog cards ---------- */
+.blog-card .card-img-top { border-radius: 0; aspect-ratio: 3 / 2; object-fit: cover; }
+.blog-card .card-title { font-size: 1.6rem; }
+.blog-card .card-text { color: var(--muted); font-size: 1rem; }
+.blog-card { transition: border-color 0.2s ease, transform 0.2s ease; }
+.blog-card:hover { border-color: var(--accent); transform: translateY(-4px); }
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-card, html { transition: none; scroll-behavior: auto; }
+  .blog-card:hover { transform: none; }
+}
+
+/* ==================================================================
+   ENDTERM ADDITIONS (pet widget, modal, validation, calculator, articles)
+   ================================================================== */
+:root {
+  --error: #ff6b6b;
+  --bs-form-invalid-color: var(--error);
+  --bs-form-invalid-border-color: var(--error);
+}
+
+/* ---------- Workout pet widget ---------- */
+.pet-widget {
+  background-color: var(--surface);
+  border: 1px solid #333;
+  border-top: 4px solid var(--accent);
+  padding: 1.5rem;
+  max-width: 28rem;
+  transition: box-shadow 0.3s ease;
+}
+.pet-widget[data-rank="S"], .pet-widget[data-rank="SS"] { box-shadow: 0 0 28px rgba(204, 255, 0, 0.3); }
+.pet-head { display: flex; align-items: center; gap: 1rem; }
+.rank-badge {
+  display: grid; place-items: center; flex: none;
+  width: 3.5rem; height: 3.5rem;
+  background-color: var(--accent); color: #111;
+  font-family: var(--font-display); font-size: 2rem; font-weight: 800;
+}
+.pet-heading { font-size: 1.7rem; margin: 0; }
+.pet-sub, .pet-xp { color: var(--muted); font-size: 0.95rem; }
+.pet-btn {
+  display: block; margin: 1rem auto;
+  width: 8rem; height: 8rem; border-radius: 50%;
+  background: transparent; border: 2px dashed #444;
+  font-size: 4.5rem; line-height: 1; cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+.pet-btn:hover, .pet-btn:focus-visible { border-color: var(--accent); background-color: rgba(204, 255, 0, 0.08); }
+#petIcon { display: inline-block; }
+.progress { height: 0.9rem; background-color: var(--surface-2); border-radius: 0; }
+.progress-bar { background-color: var(--accent); transition: width 0.4s ease; }
+.pet-actions { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.5rem; margin-top: 1rem; }
+.pet-msg { min-height: 1.5rem; margin: 0.75rem 0 0; color: var(--accent); }
+.pet-reset { background: none; border: 0; padding: 0; color: var(--muted); text-decoration: underline; }
+.pet-reset:hover { color: var(--text); }
+
+/* ---------- Achievements modal ---------- */
+.modal-content { background-color: var(--surface); border: 2px solid var(--accent); border-radius: 0; color: var(--text); }
+.modal-header { border-bottom: 1px solid #333; }
+.modal-title { font-size: 2rem; }
+.modal .btn-close { filter: invert(1); }
+.modal-rank { color: var(--muted); }
+.modal-rank strong { color: var(--accent); font-size: 1.4rem; }
+.stat-tile {
+  display: flex; flex-direction: column; align-items: center; gap: 0.25rem;
+  background-color: var(--bg); border-top: 3px solid var(--accent); padding: 1rem 0.5rem; text-align: center;
+}
+.stat-icon { font-size: 1.8rem; }
+.stat-tile strong { font-family: var(--font-display); font-size: 2rem; color: var(--accent); }
+
+/* ---------- Form validation states ---------- */
+.field-error { color: var(--error); font-size: 0.9rem; margin-top: 0.35rem; }
+.form-control.is-invalid, .form-select.is-invalid { background-color: var(--surface-2); }
+.form-control.is-invalid:focus, .form-select.is-invalid:focus { background-color: var(--surface-2); color: var(--text); }
+.form-success {
+  background-color: rgba(204, 255, 0, 0.12);
+  border: 1px solid var(--accent); border-left-width: 6px;
+  color: var(--accent); padding: 1rem 1.25rem; margin-bottom: 1rem;
+}
+.form-select:focus-visible { outline: 3px solid var(--accent); outline-offset: 2px; }
+
+/* ---------- Nutrition calculator ---------- */
+.calc-kcal { font-family: var(--font-display); font-size: clamp(3rem, 9vw, 4.5rem); font-weight: 800; color: var(--accent); line-height: 1; margin: 0.25rem 0 0.75rem; }
+.macro-card { background-color: var(--bg); border-top: 3px solid var(--accent); padding: 1rem; height: 100%; }
+.macro-card h4 { font-size: 1.4rem; margin: 0; }
+.macro-grams { font-family: var(--font-display); font-size: 2.2rem; font-weight: 700; margin: 0 0 0.5rem; }
+.macro-card small { color: var(--muted); }
+#calcResult p, #calcEmpty p { color: var(--muted); }
+#calcResult strong { color: var(--text); }
+
+/* ---------- Article search and filter ---------- */
+.article-tools { display: grid; grid-template-columns: 1fr; gap: 0.75rem; margin-bottom: 1rem; }
+@media (min-width: 768px) { .article-tools { grid-template-columns: 2fr 1fr; } }
+
+/* ---------- Hover effects on buttons and cards ---------- */
+.btn { transition: transform 0.15s ease, background-color 0.2s ease, color 0.2s ease; }
+.btn:hover { transform: translateY(-2px); }
+.card, .program-card { transition: transform 0.2s ease, border-color 0.2s ease; }
+.card:hover { border-color: var(--accent); }
+.program-card:hover { transform: translateY(-4px); }
+@media (prefers-reduced-motion: reduce) {
+  .btn, .card, .program-card, .pet-btn { transition: none; }
+  .btn:hover, .program-card:hover { transform: none; }
+}

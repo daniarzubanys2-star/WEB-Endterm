@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calisthenics Hub | Train with your own bodyweight</title>
+
+  <!-- Fonts (optional, fallbacks are defined in style.css) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- 1. Bootstrap 5.3 CSS (CDN) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- 2. Custom CSS: AFTER Bootstrap so it can override it -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===================== TASK 2 START: Bootstrap ===================== -->
+
+  <!-- NAVBAR (Bootstrap): collapses into a hamburger below 768px -->
+  <header>
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="#hero">Calisthenics<span>Hub</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#programs">Programs</a></li>
+            <li class="nav-item"><a class="nav-link" href="programs-table.html">Schedule &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- SECTION 1: HERO (Bootstrap) -->
+    <section id="hero" class="hero d-flex align-items-center">
+      <div class="container py-5">
+        <div class="row align-items-center">
+          <div class="col-12 col-lg-7">
+            <h1 class="hero-title">Your body is the only gym you need.</h1>
+            <p class="lead hero-subtitle my-4">
+              Pull-ups, push-ups, dips and handstands. Learn the skills step by step,
+              at home or at the park, with no equipment bills.
+            </p>
+            <a href="#programs" class="btn btn-accent btn-lg px-5">Pick your program</a>
+          </div>
+
+<!-- Workout Pet and Rank widget (logic in js/script.js) -->
+          <div class="col-12 col-md-8 col-lg-5 ms-lg-auto mt-5 mt-lg-0">
+            <aside class="pet-widget" id="petWidget" data-rank="E" aria-labelledby="petTitle">
+              <div class="pet-head">
+                <span class="rank-badge" id="rankBadge" aria-label="Current rank">E</span>
+                <div>
+                  <h2 class="pet-heading" id="petTitle">Beginner Egg</h2>
+                  <p class="pet-sub mb-0">Your workout pet. Log training to rank up.</p>
+                </div>
+              </div>
+              <button type="button" class="pet-btn" id="petBtn" aria-label="Open my achievements">
+                <span id="petIcon" aria-hidden="true">&#129370;</span>
+              </button>
+              <p class="pet-xp" id="xpLabel">0 / 100 XP to rank F</p>
+              <div class="progress" id="rankProgress" role="progressbar" aria-label="Progress to next rank" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100">
+                <div class="progress-bar" id="rankBar"></div>
+              </div>
+              <div class="pet-actions">
+                <button type="button" class="btn btn-outline-accent btn-sm" data-stat="pushups">+50 Push-ups</button>
+                <button type="button" class="btn btn-outline-accent btn-sm" data-stat="steps">+5,000 Steps</button>
+                <button type="button" class="btn btn-outline-accent btn-sm" data-stat="pullups">+20 Pull-ups</button>
+                <button type="button" class="btn btn-outline-accent btn-sm" data-stat="squats">+30 Squats</button>
+              </div>
+              <p class="pet-msg" id="petMsg" role="status"></p>
+              <button type="button" class="pet-reset" id="petReset">Reset progress</button>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT (Bootstrap grid + cards) -->
+    <section id="about" class="py-5">
+      <div class="container py-4">
+
+        <!-- Text + image: stacked on phones, side by side from lg.
+             order-*: text comes first on mobile, image sits on the left on desktop -->
+        <div class="row align-items-center g-5">
+          <div class="col-12 col-lg-6 order-1 order-lg-2">
+            <h2 class="section-title">Train smart, not just hard</h2>
+            <p>
+              Calisthenics builds strength by moving your own weight through space.
+              It improves control, mobility and joint health, and you can do it anywhere.
+            </p>
+            <p>
+              Our coaches turn big goals like the muscle-up or the front lever
+              into small weekly steps, so you always know what to do next.
+            </p>
+            <a href="#contact" class="btn btn-outline-accent mt-2">Talk to a coach</a>
+          </div>
+          <div class="col-12 col-lg-6 order-2 order-lg-1">
+            <img src="https://picsum.photos/seed/calisthenics-park/900/650"
+                 class="img-fluid about-img" alt="Athlete training on pull-up bars outdoors">
+          </div>
+        </div>
+
+        <!-- Reviews: Bootstrap cards, 1 per row (phone), 2 (tablet), 3 (desktop) -->
+        <h3 class="section-subtitle mt-5 pt-4 mb-4">What our athletes say</h3>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-body">
+                <p class="card-text">"I went from zero to ten strict pull-ups in four months."</p>
+              </div>
+              <div class="card-footer">Aigerim, 24, student</div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-body">
+                <p class="card-text">"Short sessions that fit around my job. My shoulders finally stopped hurting."</p>
+              </div>
+              <div class="card-footer">Daniyar, 31, developer</div>
+            </article>
+          </div>
+          <div class="col">
+            <article class="card h-100">
+              <div class="card-body">
+                <p class="card-text">"The handstand plan is clear and patient. I held 20 seconds in week six."</p>
+              </div>
+              <div class="card-footer">Madina, 28, designer</div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== TASK 2 PAUSE ===================== -->
+
+    <!-- ===================== TASK 1 START: Custom media queries =====================
+         NO Bootstrap grid classes in this section. Layout lives in style.css (.programs-*) -->
+    <section id="programs" class="programs">
+      <h2 class="programs-title">Training programs</h2>
+      <p class="programs-intro">Choose the level that matches you today. You can switch any time.</p>
+
+      <div class="programs-list">
+        <article class="program-card">
+          <h3>Starter Base</h3>
+          <p>Push-ups, rows and squats. Build the habit and the basic strength.</p>
+          <span class="program-meta">3 days a week, 8 weeks</span>
+        </article>
+        <article class="program-card">
+          <h3>Pull-up Path</h3>
+          <p>From negatives to your first clean pull-up, then to sets of ten.</p>
+          <span class="program-meta">3 days a week, 10 weeks</span>
+        </article>
+        <article class="program-card">
+          <h3>Dips and Push</h3>
+          <p>Stronger chest, shoulders and triceps with parallel bar progressions.</p>
+          <span class="program-meta">3 days a week, 8 weeks</span>
+        </article>
+        <article class="program-card">
+          <h3>Core Control</h3>
+          <p>Hollow body, L-sit and leg raises for a strong, stable midsection.</p>
+          <span class="program-meta">4 days a week, 6 weeks</span>
+        </article>
+        <article class="program-card">
+          <h3>Handstand Lab</h3>
+          <p>Wall drills, balance work and wrist care to hold your first freestanding handstand.</p>
+          <span class="program-meta">5 short sessions a week, 12 weeks</span>
+        </article>
+        <article class="program-card">
+          <h3>Muscle-up Project</h3>
+          <p>Explosive pulling, transition drills and the full ring or bar muscle-up.</p>
+          <span class="program-meta">4 days a week, 12 weeks</span>
+        </article>
+      </div>
+    </section>
+    <!-- ===================== TASK 1 END ===================== -->
+
+    <!-- ===================== TASK 2 CONTINUES: Bootstrap ===================== -->
+
+    <!-- SECTION 4: FAQ (Bootstrap accordion component) -->
+    <section id="faq" class="py-5">
+      <div class="container py-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-lg-8">
+            <h2 class="section-title mb-4">Questions we hear a lot</h2>
+
+            <div class="accordion" id="faqAccordion">
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faq1" aria-expanded="true" aria-controls="faq1">
+                    Can I start calisthenics with no experience?
+                  </button>
+                </h3>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Yes. The Starter Base program begins with wall and knee push-ups and assisted rows, then raises the difficulty as you get stronger.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    What equipment do I need?
+                  </button>
+                </h3>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">A pull-up bar and a pair of parallel bars cover most programs. Many parks have both, and resistance bands help with early progressions.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    How often should I train?
+                  </button>
+                </h3>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Three sessions a week with a rest day between them works well for beginners. Skill programs like handstands use shorter, more frequent sessions.</div>
+                </div>
+              </div>
+              <div class="accordion-item">
+                <h3 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                          data-bs-target="#faq4" aria-expanded="false" aria-controls="faq4">
+                    Will I build muscle or only get stronger?
+                  </button>
+                </h3>
+                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">Both. With enough protein, sleep and progressive overload, bodyweight training builds visible muscle, especially in the back, shoulders and arms.</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 5: CONTACT (Bootstrap form) -->
+    <section id="contact" class="py-5">
+      <div class="container py-4">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-7">
+            <h2 class="section-title mb-4">Start your first session</h2>
+
+            <form id="contactForm" class="contact-form p-4 p-md-5" action="#" method="post" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="name" class="form-label">Full name</label>
+                  <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="email" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="phone" class="form-label">Phone</label>
+                  <input type="tel" class="form-control" id="phone" name="phone" placeholder="+7 701 123 4567" autocomplete="tel">
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="level" class="form-label">Your level</label>
+                  <select class="form-select" id="level" name="level">
+                    <option>Beginner</option>
+                    <option>Intermediate</option>
+                    <option>Advanced</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label for="message" class="form-label">Your goal</label>
+                  <textarea class="form-control" id="message" name="message" rows="4"
+                            placeholder="For example: my first pull-up by summer"></textarea>
+                </div>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-accent btn-lg w-100">Send message</button>
+                </div>
+              </div>
+            </form>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Achievements modal (opened by clicking the pet) -->
+  <div class="modal fade" id="statsModal" tabindex="-1" aria-labelledby="statsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2 class="modal-title" id="statsModalLabel">My achievements</h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-rank">Rank <strong id="modalRank"></strong>: <span id="modalTitle"></span></p>
+          <div class="row g-3" id="statTiles"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer class="site-footer text-center py-4">
+    <p class="mb-0">&copy; 2026 Calisthenics Hub. Train hard, rest well.</p>
+    <p class="mb-0 small">Built with Bootstrap 5, jQuery and Google Fonts. Photos: Picsum Photos.</p>
+  </footer>
+
+  <!-- ===================== TASK 2 END ===================== -->
+
+  <!-- Bootstrap 5.3 JS bundle (navbar toggler, accordion) -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

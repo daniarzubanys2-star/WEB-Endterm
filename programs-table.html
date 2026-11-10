@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Schedule &amp; Pricing | Calisthenics Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SHARED NAVBAR (same on every page; only the active link changes) -->
+  <header>
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Calisthenics<span>Hub</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#programs">Programs</a></li>
+            <li class="nav-item"><a class="nav-link active" href="programs-table.html" aria-current="page">Schedule &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- COMPACT HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Programs, Schedule &amp; Membership Plans</h1>
+        <p class="lead">Live classes every weekday, simple plans, and a quick check of where you stand today.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: WEEKLY SCHEDULE (semantic HTML table) -->
+    <section id="schedule" class="py-5">
+      <div class="container">
+        <h2 class="section-title">Weekly class schedule</h2>
+        <p class="section-lead">All classes are live and last 60 minutes. Times are Astana time.</p>
+
+        <div class="table-responsive">
+          <table class="table table-hover align-middle schedule-table">
+            <caption>Live workouts, Monday to Friday</caption>
+            <thead>
+              <tr>
+                <th scope="col">Time</th>
+                <th scope="col">Monday</th>
+                <th scope="col">Tuesday</th>
+                <th scope="col">Wednesday</th>
+                <th scope="col">Thursday</th>
+                <th scope="col">Friday</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">07:00</th>
+                <td><strong>Core Strength</strong><span class="slot-coach">Coach Arman</span></td>
+                <td><strong>Handstand Mobility</strong><span class="slot-coach">Coach Dana</span></td>
+                <td><strong>Core Strength</strong><span class="slot-coach">Coach Arman</span></td>
+                <td><strong>Handstand Mobility</strong><span class="slot-coach">Coach Dana</span></td>
+                <td><strong>Open Park Session</strong><span class="slot-coach">All coaches</span></td>
+              </tr>
+              <tr>
+                <th scope="row">12:30</th>
+                <td><strong>Pull-up Lab</strong><span class="slot-coach">Coach Dana</span></td>
+                <td class="slot-rest">Rest</td>
+                <td><strong>Pull-up Lab</strong><span class="slot-coach">Coach Dana</span></td>
+                <td class="slot-rest">Rest</td>
+                <td><strong>Mobility Flow</strong><span class="slot-coach">Coach Dana</span></td>
+              </tr>
+              <tr>
+                <th scope="row">18:30</th>
+                <td><strong>Muscle-up Clinic</strong><span class="slot-coach">Coach Arman</span></td>
+                <td><strong>Dips and Push</strong><span class="slot-coach">Coach Timur</span></td>
+                <td><strong>Muscle-up Clinic</strong><span class="slot-coach">Coach Arman</span></td>
+                <td><strong>Dips and Push</strong><span class="slot-coach">Coach Timur</span></td>
+                <td><strong>Skills Jam</strong><span class="slot-coach">Coach Timur</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: PRICING (Bootstrap grid + cards) -->
+    <section id="pricing" class="py-5 band">
+      <div class="container">
+        <h2 class="section-title">Pricing and membership</h2>
+        <p class="section-lead">Cancel any time. Prices are per month.</p>
+
+        <div class="row row-cols-1 row-cols-lg-3 g-4 pt-3">
+          <div class="col">
+            <article class="card plan-card h-100">
+              <div class="card-body p-4">
+                <h3>Starter</h3>
+                <p class="price">9 900 &#8376;</p>
+                <ul class="plan-list list-unstyled">
+                  <li>2 live classes a week</li>
+                  <li>Starter Base program</li>
+                  <li>Class recordings for 7 days</li>
+                </ul>
+              </div>
+              <div class="card-footer border-0 p-4 pt-0">
+                <a href="index.html#contact" class="btn btn-outline-accent w-100">Choose Starter</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card plan-card plan-featured h-100">
+              <span class="badge badge-accent position-absolute top-0 start-50 translate-middle">Most popular</span>
+              <div class="card-body p-4">
+                <h3>Pro Athlete</h3>
+                <p class="price">19 900 &#8376;</p>
+                <ul class="plan-list list-unstyled">
+                  <li>All live classes, Monday to Friday</li>
+                  <li>Every program unlocked</li>
+                  <li>Monthly progress review</li>
+                  <li>Class recordings for 30 days</li>
+                </ul>
+              </div>
+              <div class="card-footer border-0 p-4 pt-0">
+                <a href="index.html#contact" class="btn btn-accent w-100">Choose Pro Athlete</a>
+              </div>
+            </article>
+          </div>
+
+          <div class="col">
+            <article class="card plan-card h-100">
+              <div class="card-body p-4">
+                <h3>1-on-1 Coaching</h3>
+                <p class="price">49 900 &#8376;</p>
+                <ul class="plan-list list-unstyled">
+                  <li>Plan written just for you</li>
+                  <li>4 private video sessions</li>
+                  <li>Technique feedback on your clips</li>
+                  <li>Chat with your coach</li>
+                </ul>
+              </div>
+              <div class="card-footer border-0 p-4 pt-0">
+                <a href="index.html#contact" class="btn btn-outline-accent w-100">Choose Coaching</a>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: BENCHMARK CHECKLIST (table + small script) -->
+    <section id="benchmarks" class="py-5">
+      <div class="container">
+        <div class="row g-5">
+          <div class="col-12 col-lg-7">
+            <h2 class="section-title">Where do you stand?</h2>
+            <p class="section-lead">Tick every benchmark you can do with good form. We suggest a program below.</p>
+
+            <div class="table-responsive">
+              <table class="table table-hover align-middle schedule-table" id="benchmarkTable">
+                <caption>Basic bodyweight benchmarks</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Exercise</th>
+                    <th scope="col">Target</th>
+                    <th scope="col" class="text-center">I can do it</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><th scope="row">Push-ups</th><td>10 reps</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can do 10 push-ups"></td></tr>
+                  <tr><th scope="row">Pull-ups</th><td>5 reps</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can do 5 pull-ups"></td></tr>
+                  <tr><th scope="row">Parallel bar dips</th><td>8 reps</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can do 8 dips"></td></tr>
+                  <tr><th scope="row">Bodyweight squats</th><td>20 reps</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can do 20 squats"></td></tr>
+                  <tr><th scope="row">Plank</th><td>60 seconds</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can hold a 60 second plank"></td></tr>
+                  <tr><th scope="row">Hollow body hold</th><td>20 seconds</td><td class="text-center"><input class="form-check-input" type="checkbox" aria-label="I can hold a 20 second hollow body"></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="col-12 col-lg-5">
+            <aside class="result-box" aria-live="polite">
+              <p class="result-count"><span id="scoreNum">0</span> of 6 benchmarks</p>
+              <h3 id="resultTitle">Starter Base</h3>
+              <p id="resultText">Start here to build the habit and the basic strength.</p>
+              <a href="index.html#programs" class="btn btn-accent">See all programs</a>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer text-center py-4">
+    <p class="mb-0">&copy; 2026 Calisthenics Hub. Train hard, rest well.</p>
+    <p class="mb-0 small">Built with Bootstrap 5, jQuery and Google Fonts. Photos: Picsum Photos.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Benchmark checklist: count ticked boxes and suggest a program
+    const boxes = document.querySelectorAll('#benchmarkTable input[type="checkbox"]');
+    const scoreNum = document.getElementById('scoreNum');
+    const resultTitle = document.getElementById('resultTitle');
+    const resultText = document.getElementById('resultText');
+
+    const levels = [
+      { min: 0, title: 'Starter Base', text: 'Start here to build the habit and the basic strength.' },
+      { min: 3, title: 'Pull-up Path', text: 'Your base is solid. Work toward sets of ten pull-ups and strong dips.' },
+      { min: 5, title: 'Muscle-up Project', text: 'You are ready for explosive pulling and skill work.' }
+    ];
+
+    function updateResult() {
+      const score = [...boxes].filter(box => box.checked).length;
+      const level = levels.filter(l => score >= l.min).pop();
+      scoreNum.textContent = score;
+      resultTitle.textContent = level.title;
+      resultText.textContent = level.text;
+    }
+
+    boxes.forEach(box => box.addEventListener('change', updateResult));
+  </script>
+</body>
+</html>

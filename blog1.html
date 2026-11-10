@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Knowledge Hub | Calisthenics Hub</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- SHARED NAVBAR (same on every page; only the active link changes) -->
+  <header>
+    <nav class="navbar navbar-expand-md sticky-top navbar-dark">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">Calisthenics<span>Hub</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#mainNav" aria-controls="mainNav"
+                aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="mainNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#programs">Programs</a></li>
+            <li class="nav-item"><a class="nav-link" href="programs-table.html">Schedule &amp; Pricing</a></li>
+            <li class="nav-item"><a class="nav-link active" href="blog.html" aria-current="page">Blog</a></li>
+            <li class="nav-item"><a class="nav-link" href="index.html#contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- COMPACT HERO -->
+    <section class="page-hero">
+      <div class="container">
+        <h1>Calisthenics Knowledge Hub</h1>
+        <p class="lead">Technique guides, recovery tips, and progression paths.</p>
+      </div>
+    </section>
+
+    <!-- SECTION 1: FEATURED ARTICLE (2 columns, stacks on phones) -->
+    <section id="featured" class="py-5">
+      <div class="container">
+        <article class="row align-items-center g-4 g-lg-5">
+          <div class="col-12 col-lg-6">
+            <img src="https://picsum.photos/seed/muscle-up-guide/900/650"
+                 class="img-fluid about-img" alt="Athlete at the top of a bar during a muscle-up">
+          </div>
+          <div class="col-12 col-lg-6">
+            <span class="badge badge-accent mb-3">Featured guide</span>
+            <h2 class="section-title">Your first muscle-up in 12 weeks</h2>
+            <p>
+              The muscle-up looks like one big move, but it is three small ones: a high
+              pull, a fast transition, and a strong press out. Most people stall at the
+              transition because they pull straight up instead of pulling back toward the hips.
+            </p>
+            <p>
+              In this guide we break the move into drills you can practice twice a week:
+              chest-to-bar pull-ups, straight bar dips, and the false grip on rings. You
+              will also get a simple test to know when you are ready for the full rep.
+            </p>
+            <a href="#" class="btn btn-accent mt-2">Read the full guide</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- NUTRITION CALCULATOR (Endterm feature, logic in js/script.js) -->
+    <section id="calculator" class="py-5 band">
+      <div class="container">
+        <h2 class="section-title">Daily calorie and nutrition calculator</h2>
+        <p class="section-lead">Estimate your calories (Mifflin-St Jeor formula) and a protein, carbs and fats split for your goal.</p>
+        <div class="row g-4 g-lg-5">
+          <div class="col-12 col-lg-5">
+            <form id="calcForm" class="contact-form p-4" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-sm-6">
+                  <label for="weight" class="form-label">Weight (kg)</label>
+                  <input type="number" class="form-control" id="weight" name="weight" inputmode="decimal" step="any" placeholder="70">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="height" class="form-label">Height (cm)</label>
+                  <input type="number" class="form-control" id="height" name="height" inputmode="decimal" step="any" placeholder="175">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="age" class="form-label">Age</label>
+                  <input type="number" class="form-control" id="age" name="age" inputmode="numeric" step="1" placeholder="25">
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="sex" class="form-label">Sex</label>
+                  <select class="form-select" id="sex" name="sex"><option value="male">Male</option><option value="female">Female</option></select>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="activity" class="form-label">Activity level</label>
+                  <select class="form-select" id="activity" name="activity">
+                    <option value="sedentary">Sedentary</option><option value="moderate" selected>Moderate</option><option value="active">Active</option>
+                  </select>
+                </div>
+                <div class="col-12 col-sm-6">
+                  <label for="goal" class="form-label">Goal</label>
+                  <select class="form-select" id="goal" name="goal">
+                    <option value="cut">Cut</option><option value="maintain" selected>Maintain</option><option value="bulk">Bulk</option>
+                  </select>
+                </div>
+                <div class="col-12"><button type="submit" class="btn btn-accent btn-lg w-100">Calculate my plan</button></div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 col-lg-7" aria-live="polite">
+            <div id="calcEmpty" class="result-box"><h3>Your plan appears here</h3><p class="mb-0">Fill in the form and press Calculate.</p></div>
+            <div id="calcResult" class="result-box" hidden>
+              <h3 class="visually-hidden">Your daily plan</h3>
+              <p class="result-count mb-0">Daily target</p>
+              <p class="calc-kcal"><span id="resKcal">0</span> kcal</p>
+              <p class="mb-3">BMR <strong id="resBmr">0</strong> kcal, TDEE <strong id="resTdee">0</strong> kcal</p>
+              <div class="row row-cols-1 row-cols-sm-3 g-3" id="macroCards"></div>
+              <p class="small mt-3 mb-0">This is an estimate, not medical advice.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: ARTICLE CARDS (1 per row on phones, 2 on tablet, 3 on desktop) -->
+    <section id="articles" class="py-5">
+      <div class="container">
+        <h2 class="section-title mb-4">Latest articles</h2>
+
+        <div class="article-tools">
+          <div>
+            <label for="articleSearch" class="visually-hidden">Search articles</label>
+            <input type="search" id="articleSearch" class="form-control" placeholder="Search articles, for example wrist or protein">
+          </div>
+          <div>
+            <label for="articleCategory" class="visually-hidden">Filter by topic</label>
+            <select id="articleCategory" class="form-select"><option value="all">All topics</option></select>
+          </div>
+        </div>
+        <p id="articleCount" class="section-lead" aria-live="polite"></p>
+        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4" id="articleGrid"></div>
+        <div id="articleEmpty" class="result-box" hidden><h3>No articles found</h3><p class="mb-0">Try another word or choose "All topics".</p></div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: NEWSLETTER FORM -->
+    <section id="newsletter" class="py-5 band">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-12 col-md-10 col-lg-7">
+            <h2 class="section-title">Get one workout guide every week</h2>
+            <p class="section-lead">Short, practical and free. Unsubscribe with one click.</p>
+
+            <form id="newsletterForm" class="contact-form p-4 p-md-5" action="#" method="post" novalidate>
+              <div class="row g-3">
+                <div class="col-12 col-md-6">
+                  <label for="nlName" class="form-label">First name</label>
+                  <input type="text" class="form-control" id="nlName" name="name" required>
+                </div>
+                <div class="col-12 col-md-6">
+                  <label for="nlEmail" class="form-label">Email</label>
+                  <input type="email" class="form-control" id="nlEmail" name="email" required>
+                </div>
+                <fieldset class="col-12">
+                  <legend class="form-label fs-6">I want tips about</legend>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="topicSkills" name="topics" value="skills" checked>
+                    <label class="form-check-label" for="topicSkills">Skills</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="topicNutrition" name="topics" value="nutrition">
+                    <label class="form-check-label" for="topicNutrition">Nutrition</label>
+                  </div>
+                  <div class="form-check form-check-inline">
+                    <input class="form-check-input" type="checkbox" id="topicRecovery" name="topics" value="recovery">
+                    <label class="form-check-label" for="topicRecovery">Recovery</label>
+                  </div>
+                </fieldset>
+                <div class="col-12">
+                  <button type="submit" class="btn btn-accent btn-lg w-100">Subscribe</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- SHARED FOOTER -->
+  <footer class="site-footer text-center py-4">
+    <p class="mb-0">&copy; 2026 Calisthenics Hub. Train hard, rest well.</p>
+    <p class="mb-0 small">Built with Bootstrap 5, jQuery and Google Fonts. Photos: Picsum Photos.</p>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>
