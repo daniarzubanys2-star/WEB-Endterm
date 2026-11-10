@@ -267,14 +267,14 @@ function initCalculator() {
 
 /* ---------- 5. Articles: data array, search and filter (blog.html) ---------- */
 const ARTICLES = [
-  { title: 'How to fix wrist pain in handstands', category: 'Recovery', minutes: 5, img: 'https://picsum.photos/seed/wrist-care/600/400', alt: 'Hands on the floor in a handstand preparation', text: 'Warm up the joint, spread the load across your fingers, and build wrist strength slowly.' },
-  { title: 'Nutrition for bodyweight strength', category: 'Nutrition', minutes: 7, img: 'https://picsum.photos/seed/nutrition-food/600/400', alt: 'Healthy meal with chicken, rice and vegetables', text: 'How much protein you need, when to eat around training, and what to do on rest days.' },
-  { title: '5 mistakes in strict pull-ups', category: 'Technique', minutes: 6, img: 'https://picsum.photos/seed/pullup-bar/600/400', alt: 'Athlete hanging from a pull-up bar', text: 'Kipping by accident, half reps, shrugged shoulders and three more habits to fix today.' },
-  { title: 'Sleep and rest: where strength is built', category: 'Recovery', minutes: 4, img: 'https://picsum.photos/seed/rest-day/600/400', alt: 'Person stretching on a mat', text: 'A simple weekly structure so your tendons and muscles can keep up with your goals.' },
-  { title: 'From bench dips to ring dips', category: 'Progression', minutes: 6, img: 'https://picsum.photos/seed/dips-bars/600/400', alt: 'Athlete doing dips on parallel bars', text: 'Five steps that make your chest and shoulders ready for unstable work.' },
-  { title: 'A 20-minute home routine with no equipment', category: 'Beginners', minutes: 3, img: 'https://picsum.photos/seed/home-workout/600/400', alt: 'Person doing push-ups at home', text: 'Push, pull, legs and core in one short session you can repeat three times a week.' },
-  { title: 'Progressive overload without weights', category: 'Progression', minutes: 5, img: 'https://picsum.photos/seed/progressive-overload/600/400', alt: 'Athlete doing a harder push-up variation', text: 'Change leverage, tempo and range of motion to keep getting stronger using only your body.' },
-  { title: 'Mobility routine for desk workers', category: 'Recovery', minutes: 4, img: 'https://picsum.photos/seed/desk-mobility/600/400', alt: 'Person stretching their hips next to a desk', text: 'Ten minutes for hips, shoulders and upper back to undo a day of sitting.' }
+  { title: 'How to fix wrist pain in handstands', category: 'Recovery', minutes: 5, img: 'images/photo-3.jpg', alt: 'Hands on the floor in a handstand preparation', text: 'Warm up the joint, spread the load across your fingers, and build wrist strength slowly.' },
+  { title: 'Nutrition for bodyweight strength', category: 'Nutrition', minutes: 7, img: 'images/photo-4.jpg', alt: 'Healthy meal with chicken, rice and vegetables', text: 'How much protein you need, when to eat around training, and what to do on rest days.' },
+  { title: '5 mistakes in strict pull-ups', category: 'Technique', minutes: 6, img: 'images/photo-5.jpg', alt: 'Athlete hanging from a pull-up bar', text: 'Kipping by accident, half reps, shrugged shoulders and three more habits to fix today.' },
+  { title: 'Sleep and rest: where strength is built', category: 'Recovery', minutes: 4, img: 'images/photo-6.jpg', alt: 'Person stretching on a mat', text: 'A simple weekly structure so your tendons and muscles can keep up with your goals.' },
+  { title: 'From bench dips to ring dips', category: 'Progression', minutes: 6, img: 'images/photo-7.jpg', alt: 'Athlete doing dips on parallel bars', text: 'Five steps that make your chest and shoulders ready for unstable work.' },
+  { title: 'A 20-minute home routine with no equipment', category: 'Beginners', minutes: 3, img: 'images/photo-8.jpg', alt: 'Person doing push-ups at home', text: 'Push, pull, legs and core in one short session you can repeat three times a week.' },
+  { title: 'Progressive overload without weights', category: 'Progression', minutes: 5, img: 'images/photo-9.jpg', alt: 'Athlete doing a harder push-up variation', text: 'Change leverage, tempo and range of motion to keep getting stronger using only your body.' },
+  { title: 'Mobility routine for desk workers', category: 'Recovery', minutes: 4, img: 'images/photo-10.jpg', alt: 'Person stretching their hips next to a desk', text: 'Ten minutes for hips, shoulders and upper back to undo a day of sitting.' }
 ];
 
 function buildCard(a) {
